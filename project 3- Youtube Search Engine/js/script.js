@@ -29,3 +29,36 @@ $(function(){
 		e.preventDefault();
 	});
 });
+
+function search() {
+	// Clear Results
+	$('#results').html('');
+	$('#buttons').html('');
+
+	// Get form input
+	q = $('#query').val();
+
+	// Run GET Request on API
+	$.get(
+		"https://www.googleapis.com/youtube/v3/search", {
+			part: 'snippet, id',
+			q: q,
+			type: 'video',
+			key: 'AIzaSyBNMgpQzjjA75vUgsb0S5VtnykZblXSkc8'},
+			function(data) {
+				var nextPageToken = data.nextPageToken;
+				var prevPageToken = data.prevPageToken;
+
+				// Log data
+				console.log(data);
+
+				$.each(data.items, function(i, item){
+					// Get Output
+					var output = getOutput(item);
+
+					// Display Results
+					$('#results').append(output);
+				});
+			}
+	);
+}
