@@ -101,3 +101,30 @@ footer{
 	filter:alpha(opacity=90);
 	opacity:0.9;
 }
+
+#result li{
+	padding: 10px 0;
+	border-bottom: 1px #ccc dotted;
+	list-style: none;
+	overflow: auto;
+}
+
+.list-left {
+	float: left;
+	width: 20%;
+}
+
+.list-left img {
+	width: 100%;
+	padding: 3px;
+	padding: solid #ccc 1px;
+}
+
+.list-right {
+	float: right;
+	width: 78%;
+}
+
+.cTitle {
+	color: #dd2826;
+}
