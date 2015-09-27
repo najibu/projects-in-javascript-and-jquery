@@ -51,6 +51,12 @@ h1{
 	display: none;
 }
 
+.rotate{
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
 @media(max-width: 800px){
 	#container{
 		width: 90%;
